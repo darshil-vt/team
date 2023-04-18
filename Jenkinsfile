@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Install dependencies') {
             steps {
-                exho ' rm -rf node_modules && npm install'
+                echo ' rm -rf node_modules && npm install'
             }
         }
         stage('Run tests admin') {
