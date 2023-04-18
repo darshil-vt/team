@@ -9,9 +9,8 @@ pipeline {
         }
         stage('Run tests admin') {
             steps {
-                sh '''#!/bin/bash
-                set -e
-                npm test -- --forceExit
+                sh '''
+                npm test-- --process.exit()
                 '''
             }
         }    
