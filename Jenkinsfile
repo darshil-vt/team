@@ -4,15 +4,21 @@ pipeline {
     stages {
         stage('Install dependencies') {
             steps {
-                echo ' rm -rf node_modules && npm install'
+                exho ' rm -rf node_modules && npm install'
             }
         }
         stage('Run tests admin') {
             steps {
-                sh 'npx test'
-                sh 'process.exit(0)'
+                sh 'npm test'
             }
         }    
-
+        stage('Deploy') {
+            when {
+                expression { currentBuild.result == 'SUCCESS' }
+            }
+            steps {
+                echo 'finish'
+            }
+        }
     }
 }
