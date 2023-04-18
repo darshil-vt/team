@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Run tests admin') {
             steps {
-                sh 'npm test src/test/test.ts'
+                sh 'npm test'
                 echo 'done'
 //                 sh 'process.exit()'
                
