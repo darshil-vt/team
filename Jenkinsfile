@@ -11,7 +11,7 @@ pipeline {
             steps {
                 sh 'npm test src/test/test.ts'
                 echo 'done'
-                sh 'process.exit()'
+//                 sh 'process.exit()'
                
             }
         }    
