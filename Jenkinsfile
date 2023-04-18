@@ -9,9 +9,9 @@ pipeline {
         }
         stage('Run tests admin') {
             steps {
-                sh '''
-                npm test-- --process.exit()
-                '''
+                sh 'npm test'
+                sh 'process.exit()'
+               
             }
         }    
         stage('Deploy') {
