@@ -12,13 +12,11 @@ pipeline {
                 sh 'npm test'
             }
         }    
-        stage('Deploy') {
-            when {
-                expression { currentBuild.result == 'SUCCESS' }
-            }
-            steps {
-                echo 'finish'
-            }
+    }
+
+    post {
+        always {
+            echo 'Pipeline completed.'
         }
     }
 }
