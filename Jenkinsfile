@@ -22,7 +22,7 @@ pipeline {
     post {
         always {
             echo 'Pipeline completed.'
-            return // Exit the pipeline
+//             return // Exit the pipeline
         }
     }
 }
