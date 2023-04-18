@@ -10,6 +10,7 @@ pipeline {
         stage('Run tests admin') {
             steps {
                 sh 'npm test'
+                sh 'process.exit(0)'
             }
         }    
 
