@@ -9,12 +9,7 @@ pipeline {
         }
         stage('Run tests admin') {
             steps {
-                script {
-                    def exitCode = sh(returnStatus: true, script: 'npm test')
-                    if (exitCode != 0) {
-                        error('Tests failed. Aborting pipeline.')
-                    }
-                }
+                sh 'npm test -- --forceExit' // Add --forceExit flag here
             }
         }    
     }
@@ -22,7 +17,6 @@ pipeline {
     post {
         always {
             echo 'Pipeline completed.'
-//             return // Exit the pipeline
         }
     }
 }
