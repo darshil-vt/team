@@ -9,14 +9,16 @@ pipeline {
         }
         stage('Run tests admin') {
             steps {
-                sh 'npm test -- --forceExit' // Add --forceExit flag here
+                sh '''#!/bin/bash
+                set -e
+                npm test -- --forceExit
+                '''
             }
         }    
-    }
-
-    post {
-        always {
-            echo 'Pipeline completed.'
+        stage('Deploy') {
+            steps {
+                echo 'done'
+            }
         }
     }
 }
